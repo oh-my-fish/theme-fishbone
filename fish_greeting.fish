@@ -30,7 +30,7 @@ end
 
 function show_date_info -d "Prints information about date"
 
-    set --local up_time (uptime | cut -d" " -f4 -f5 | tr -d ",")
+    set --local up_time (uptime | cut -d " " -f4,5 | tr -d ",")
 
     echo -en "Today is "
     set_color green;
@@ -88,7 +88,7 @@ function show_mem_info -d "Prints memory information"
     set --local total_memory ""
 
     if [ "$os_type" = "Linux" ]
-        set --local total_memory (free -h | grep "Mem" | cut -d " " -f 11)
+        set total_memory (free -h | grep "Mem" | cut -d " " -f 12)
 
     else if [ "$os_type" = "Darwin" ]
         set total_memory (system_profiler SPHardwareDataType | grep "Memory:" | cut -d ":" -f 2 | tr -d " ")
