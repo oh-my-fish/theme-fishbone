@@ -48,7 +48,7 @@ function show_os_info -d "Prints operating system info"
 
     set_color yellow
     echo -en "\tOS: "
-    set_color green
+    set_color 0F0  # green
     echo -en (uname -sm)
     set_color normal
 end
@@ -76,7 +76,7 @@ function show_cpu_info -d "Prints iformation about cpu"
 
     set_color yellow
     echo -en "\tCPU: "
-    set_color green
+    set_color 0F0  # green
     echo -en $cpu_info
     set_color normal
 end
@@ -96,7 +96,7 @@ function show_mem_info -d "Prints memory information"
 
     set_color yellow
     echo -en "\tMemory: "
-    set_color green
+    set_color 0F0  # green
     echo -en $total_memory
     set_color normal
 end
@@ -118,7 +118,7 @@ function show_net_info -d "Prints information about network"
 
     set_color yellow
     echo -en "\tNet: "
-    set_color green
+    set_color 0F0  # green
     echo -en "Ip address $ip, default gateway $gw"
     set_color normal
 end
