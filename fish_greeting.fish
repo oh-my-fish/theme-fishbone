@@ -22,7 +22,7 @@ end
 function welcome_message -d "Say welcome to user"
 
     echo -en "Welcome aboard captain "
-    set_color white
+    set_color FFF  # white
     echo -en (whoami) "!"
     set_color normal
 end
@@ -30,14 +30,14 @@ end
 
 function show_date_info -d "Prints information about date"
 
-    set --local up_time (uptime | cut -d " " -f4,5 | tr -d ",")
+    set --local up_time (uptime |sed 's/^ *//g' |cut -d " " -f4,5 |tr -d ",")
 
     echo -en "Today is "
-    set_color green;
+    set_color cyan
     echo -en (date +%Y.%m.%d,)
     set_color normal
     echo -en " we are up and running for "
-    set_color green
+    set_color cyan
     echo -en "$up_time"
     set_color normal
     echo -en "."
