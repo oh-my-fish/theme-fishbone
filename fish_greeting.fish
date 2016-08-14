@@ -11,7 +11,7 @@ function fish_greeting -d "Greeting message on shell session start up"
     echo -en "     |     |      " (show_os_info) "\n"
     echo -en "   ,'|  |  |`.    " (show_cpu_info) "\n"
     echo -en "  /  |  |  |  \   " (show_mem_info) "\n"
-    echo -en "  |,-'--|--'-.|   \n"
+    echo -en "  |,-'--|--'-.|   " (show_net_info) "\n"
     echo ""
     set_color grey
     echo "Have a nice trip"
@@ -98,5 +98,25 @@ function show_mem_info -d "Prints memory information"
     echo -en "\tMemory: "
     set_color green
     echo -en $total_memory
+    set_color normal
+end
+
+
+function show_net_info -d "Prints information about network"
+
+    set --local os_type (uname -s)
+    set --local ip ""
+    set --local gw ""
+
+    if [ "$os_type" = "Linux" ]
+    else if [ "$os_type" = "Darwin" ]
+        set ip (ifconfig | grep -v "127.0.0.1" | grep "inet " | head -1 | cut -d " " -f2)
+        set gw (netstat -nr | grep default | cut -d " " -f13)
+    end
+
+    set_color yellow
+    echo -en "\tNet: "
+    set_color green
+    echo -en "Ip address $ip, default gateway $gw"
     set_color normal
 end
