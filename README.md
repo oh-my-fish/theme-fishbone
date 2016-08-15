@@ -8,7 +8,7 @@ A clean theme for [fish shell](https://fishshell.com) managed by [Oh my fish](ht
 
 ## Example
 
-<img src="https://github.com/pantuza/fishbone/raw/master/fishbone.gif" align="center" />
+<img src="https://github.com/pantuza/fishbone/raw/animation/fishbone.gif" align="center" />
 
 ## Installation
 
