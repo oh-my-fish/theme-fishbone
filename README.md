@@ -13,6 +13,7 @@ A clean theme for [fish shell](https://fishshell.com) managed by [Oh my fish](ht
 ## Installation
 
 ```fish
+omf update  # Just if your omf installation is old. Avoids missing the package
 omf install fishbone
 ```
 > omf (Oh my fish) is a package manager for fish shell. Just like pip is for Python and gem is for Ruby
