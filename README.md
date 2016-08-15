@@ -23,6 +23,27 @@ omf install fishbone
 * Displays the current time at right;
 * On git repositories shows its current branch and modifications on right side;
 * Colon at left side becames red if last command fails;
+* At start up, shows user name, date, uptime, informations about OS, CPU, memory and network;
+ 
+## Project structure
+
+We have two branches:
+
+* master: Where the necessary files for theme is;
+* animation: There is two adicional files (animation.cxf, fishbone.gif) that is used for theme example at README.md file.
+
+The theme files are separated as follows:
+
+* fish_prompt.fish: Has the function to print the prompt line;
+* fish_right_prompt.fish: Prints the right side of the shell prompt;
+* fish_greeting.fish: Prints the welcome message at shell session start up;
+
+
+## Contributing
+
+We are not stringent with contributions.
+Just fork the project, do some modifications and send us a Pull request : )
+Bugs and improvements can be reported/suggested as [issues](https://github.com/oh-my-fish/theme-fishbone/issues).
 
 
 # License
