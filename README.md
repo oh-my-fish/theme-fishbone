@@ -1,14 +1,14 @@
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 # fishbone
-A clean and simple theme for [fish shell](https://fishshell.com) managed by [Oh my fish](https://github.com/oh-my-fish/oh-my-fish)
+A clean theme for [fish shell](https://fishshell.com) managed by [Oh my fish](https://github.com/oh-my-fish/oh-my-fish)
 
 <br />
 <br />
 
 ## Example
 
-> Place a photo or gif here
+<img src="https://github.com/pantuza/fishbone/raw/master/fishbone.gif" align="center" />
 
 ## Installation
 
