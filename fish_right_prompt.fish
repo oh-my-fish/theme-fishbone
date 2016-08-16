@@ -7,10 +7,19 @@ function fish_right_prompt -d "Right side prompt message"
 
     set_color $dark_grey
 
+    show_virtualenv_name
     show_git_info
     echo -en (date +%H:%M:%S)
 
     set_color normal
+end
+
+
+function show_virtualenv_name -d "Display the name of the current virtualenv"
+
+    if set -q VIRTUAL_ENV
+        echo -en "["(basename "$VIRTUAL_ENV")"] "
+    end
 end
 
 
