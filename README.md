@@ -23,6 +23,7 @@ omf install fishbone
 * Only displays an abbreviatted path on left side;
 * Displays the current time at right;
 * On git repositories shows its current branch and modifications on right side;
+* For Python users, if there is an active virtualenv, it will be displayed at right between brackets;
 * Colon at left side becames red if last command fails;
 * At start up, shows user name, date, uptime, informations about OS, CPU, memory and network;
  
