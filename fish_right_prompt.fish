@@ -48,6 +48,6 @@ function show_git_info -d "Show git repository information"
 
     # Prints git repository status
     echo -en "("
-    echo -en (git rev-parse --abbrev-ref HEAD)$dirty
+    echo -en (git_branch_name)$dirty
     echo -en ") "
 end
