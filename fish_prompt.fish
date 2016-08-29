@@ -25,7 +25,7 @@ end
 
 function show_status -a last_status -d "Prints red/grey colon based on status"
 
-    set --local current_color grey
+    set --local current_color "FFF"
 
     if [ $last_status -ne 0 ]
         set current_color red
