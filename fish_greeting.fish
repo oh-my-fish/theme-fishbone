@@ -109,8 +109,8 @@ function show_net_info -d "Prints information about network"
     set --local gw ""
 
     if [ "$os_type" = "Linux" ]
-        set ip (ip addr show | grep -v "127.0.0.1" | grep "inet "| sed 's/^ *//g' | cut -d " " -f2)
-        set gw (netstat -nr | grep UG | cut -d " " -f10)
+        set ip (ip address show | grep -E "inet .* brd .* dynamic" | cut -d " " -f6)
+        set gw (ip route | grep default | cut -d " " -f3)
     else if [ "$os_type" = "Darwin" ]
         set ip (ifconfig | grep -v "127.0.0.1" | grep "inet " | head -1 | cut -d " " -f2)
         set gw (netstat -nr | grep default | cut -d " " -f13)
