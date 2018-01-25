@@ -30,7 +30,19 @@ end
 
 function show_date_info -d "Prints information about date"
 
-    set --local up_time (uptime |sed 's/^ *//g' |cut -d " " -f4,5 |tr -d ",")
+    set --local up_time (uptime | cut -d "," -f1 | cut -d "p" -f2 | sed 's/^ *//g')
+
+    set --local time (echo $up_time | cut -d " " -f2)
+    set --local formatted_uptime $time
+
+    switch $time
+    case "days"
+        set formatted_uptime "$up_time hours"
+    case "min"
+        set formatted_uptime $up_time"utes"
+    case '*'
+        set formatted_uptime "$formatted_uptime hours"
+    end
 
     echo -en "Today is "
     set_color cyan
@@ -38,7 +50,7 @@ function show_date_info -d "Prints information about date"
     set_color normal
     echo -en " we are up and running for "
     set_color cyan
-    echo -en "$up_time"
+    echo -en "$formatted_uptime"
     set_color normal
     echo -en "."
 end
