@@ -46,9 +46,9 @@ function show_date_info -d "Prints information about date"
 
     echo -en "Today is "
     set_color cyan
-    echo -en (date +%Y.%m.%d,)
+    echo -en (date +%Y.%m.%d)
     set_color normal
-    echo -en " we are up and running for "
+    echo -en ", we are up and running for "
     set_color cyan
     echo -en "$formatted_uptime"
     set_color normal
