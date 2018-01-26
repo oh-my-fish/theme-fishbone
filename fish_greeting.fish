@@ -123,9 +123,10 @@ function show_net_info -d "Prints information about network"
     if [ "$os_type" = "Linux" ]
         set ip (ip address show | grep -E "inet .* brd .* dynamic" | cut -d " " -f6)
         set gw (ip route | grep default | cut -d " " -f3)
+
     else if [ "$os_type" = "Darwin" ]
         set ip (ifconfig | grep -v "127.0.0.1" | grep "inet " | head -1 | cut -d " " -f2)
-        set gw (netstat -nr | grep default | cut -d " " -f13)
+        set gw (netstat -nr | grep -E "default.*UGSc" | cut -d " " -f13)
     end
 
     set_color yellow
