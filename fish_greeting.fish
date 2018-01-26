@@ -37,7 +37,7 @@ function show_date_info -d "Prints information about date"
 
     switch $time
     case "days"
-        set formatted_uptime "$up_time hours"
+        set formatted_uptime "$up_time"
     case "min"
         set formatted_uptime $up_time"utes"
     case '*'
