@@ -100,7 +100,7 @@ function show_mem_info -d "Prints memory information"
     set --local total_memory ""
 
     if [ "$os_type" = "Linux" ]
-        set total_memory (free -h | grep "Mem" | cut -d " " -f 12)
+        set total_memory (free -h | grep "Mem" | cut -d " " -f 11)
 
     else if [ "$os_type" = "Darwin" ]
         set total_memory (system_profiler SPHardwareDataType | grep "Memory:" | cut -d ":" -f 2 | tr -d " ")
