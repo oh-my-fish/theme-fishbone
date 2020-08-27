@@ -28,6 +28,7 @@ function show_git_info -d "Show git repository information"
     set --local LIMBO /dev/null
     set --local git_status (git status --porcelain 2> $LIMBO)
     set --local dirty ""
+    set --local IFS
 
     [ $status -eq 128 ]; and return  # Not a repository? Nothing to do
 
@@ -41,7 +42,7 @@ function show_git_info -d "Show git repository information"
         set dirty "$dirty+"
     end
 
-    # If there is stashed modifications on repository, add '^' to dirty
+    # If there are stashed modifications on repository, add '^' to dirty
     if not [ -z (git stash list) ]
         set dirty "$dirty^"
     end
