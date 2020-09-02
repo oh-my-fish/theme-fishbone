@@ -100,7 +100,7 @@ function show_mem_info -d "Prints memory information"
     set --local total_memory ""
 
     if [ "$os_type" = "Linux" ]
-        set total_memory (free -h | grep "Mem" | cut -d " " -f 11)
+        set total_memory (free | awk '/^Mem:/ { total=$2;used=$3;printf "%.1fG/%.1fG (%d%%)", used/1024/1024, total/1024/1024, 100*used/total }')
 
     else if [ "$os_type" = "Darwin" ]
         set total_memory (system_profiler SPHardwareDataType | grep "Memory:" | cut -d ":" -f 2 | tr -d " ")
@@ -132,6 +132,6 @@ function show_net_info -d "Prints information about network"
     set_color yellow
     echo -en "\tNet: "
     set_color 0F0  # green
-    echo -en "Ip address $ip, default gateway $gw"
+    echo -en "IP address $ip, default gateway $gw"
     set_color normal
 end
