@@ -23,7 +23,7 @@ function welcome_message -d "Say welcome to user"
 
     echo -en "Welcome aboard captain "
     set_color FFF  # white
-    echo -en (whoami) "!"
+    echo -en (whoami)"!"
     set_color normal
 end
 
